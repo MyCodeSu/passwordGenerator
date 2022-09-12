@@ -18,36 +18,57 @@ const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const num = "1234567890";
 const specChar = "`~!@#$%^&*()_+-=[];',./{}|:?<>|";
+const options = [];
 
 // Assignment code here
-function generatePassword() {
-  var passwordLength = alert('How long will your password be? (Enter a number between 8 - 128)');
+function setPasswordLength() {
+  var passwordLength = prompt('How long will your password be? (Enter a number between 8 - 128)');
   if (passwordLength < 8 || passwordLength > 128) {
     alert('Please enter a number between 8 - 128');
     return passwordLength();
   }
+};
 
-  function passwordCharacterSet() {
-    var lowerCaseConfirm = confirm('Will your password have LOWERCASE characters?');
-    var upperCaseConfirm = confirm('Will your password have UPPERCASE characters?');
-    var numConfirm = confirm('Will your password have NUMERIC characters?');
-    var symbolConfirm = confirm('Will your password have SPECIAL characters?');
+var passwordCharacterSet = function () {
+  var lowerCaseConfirm = confirm('Will your password have LOWERCASE characters?');
+  var upperCaseConfirm = confirm('Will your password have UPPERCASE characters?');
+  var numConfirm = confirm('Will your password have NUMERIC characters?');
+  var symbolConfirm = confirm('Will your password have SPECIAL characters?');
+};
+
+
+function checkCharacterSet() {
+  if (
+    this.lowerCaseConfirm == false &&
+    this.upperCaseConfirm == false &&
+    this.numConfirm == false &&
+    this.symbolConfirm == false) {
+    alert('At least ONE character type must be included for the password to generate. Please try again.')
+    this.passwordCharacterSet();
   }
-
-
-  function checkCharacterSet() {
-    if (
-      this.lowerCaseConfirm == false &&
-      this.upperCaseConfirm == false &&
-      this.numConfirm == false &&
-      this.symbolConfirm == false) {
-      alert('At least ONE character type must be included for the password to generate. Please try again.')
-      this.passwordCharacterSet();
-    }
-  }
-
-
 }
+
+if (lowerCaseConfirm) {
+  options = options.concat(lowerCase);
+}
+if (upperCaseConfirm) {
+  options = options.concat(upperCase);
+}
+if (numConfirm) {
+  options = options.concat(num);
+}
+if (symbolConfirm) {
+  options = options.concat(specChar);
+}
+
+const password = [];
+
+for (var i = 0; i < passwordLength; i++) {
+  const concatOptions = options[Math.floor(Math.random() * options.length)];
+  password.push(concatOptions);
+}
+return password.join("")
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
