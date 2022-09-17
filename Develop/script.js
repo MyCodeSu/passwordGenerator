@@ -48,6 +48,8 @@ passwordCharacterSet();
     }
   };
 
+checkCharacterSet();
+
   if (passwordCharacterSet.lowerCaseConfirm) {
     options = options.concat(lowerCase);
   }
@@ -70,12 +72,15 @@ passwordCharacterSet();
   return password.join("")
 };
 
+
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+console.log(password);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
