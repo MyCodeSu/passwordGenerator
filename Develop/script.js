@@ -21,7 +21,7 @@ const specChar = "`~!@#$%^&*()_+-=[];',./{}|:?<>|";
 const options = [];
 
 // Assignment code here
-var generatePassword = function () {
+var generatePassword = function() {
   var passwordLength = prompt('How long will your password be? (Enter a number between 8 - 128)');
   if (passwordLength < 8 || passwordLength > 128) {
     alert('Please enter a number between 8 - 128');
@@ -35,6 +35,7 @@ var generatePassword = function () {
     var symbolConfirm = confirm('Will your password have SPECIAL characters?');
   };
 
+passwordCharacterSet();
 
   function checkCharacterSet() {
     if (
@@ -47,16 +48,16 @@ var generatePassword = function () {
     }
   };
 
-  if (lowerCaseConfirm) {
+  if (passwordCharacterSet.lowerCaseConfirm) {
     options = options.concat(lowerCase);
   }
-  if (upperCaseConfirm) {
+  if (passwordCharacterSet.upperCaseConfirm) {
     options = options.concat(upperCase);
   }
-  if (numConfirm) {
+  if (passwordCharacterSet.numConfirm) {
     options = options.concat(num);
   }
-  if (symbolConfirm) {
+  if (passwordCharacterSet.symbolConfirm) {
     options = options.concat(specChar);
   }
 
