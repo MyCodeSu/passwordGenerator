@@ -31,10 +31,9 @@ var generatePassword = function () {
 
 
 
-  while (passwordLength < 8 || passwordLength > 128 || passwordLength === "" || passwordLength === null ) {
+  while (passwordLength < 8 || passwordLength > 128 || passwordLength === "" || passwordLength === null) {
 
     passwordLength = prompt("Your password must be at least 8 - 128 characters in length. Please enter your password length.");
-    return passwordLength;
   }
 
 
@@ -63,7 +62,8 @@ var generatePassword = function () {
   }
 
   for (var i = 0; i < passwordLength; i++) {
-    random = charSet.charAt(Math.floor(Math.random() * length));
+    var newLetter = charSet.charAt(Math.floor(Math.random() * passwordLength));
+    random += newLetter;
   }
   return random;
 
