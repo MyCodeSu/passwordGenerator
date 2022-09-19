@@ -18,9 +18,8 @@ const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const num = "1234567890";
 const specChar = "`~!@#$%^&*()_+-=[];',./{}|:?<>|";
-var charSet = "";
-var random = "";
-var passwordLength = "";
+
+
 
 
 // Assignment code here
@@ -30,13 +29,13 @@ var passwordLength = "";
 var generatePassword = function () {
 
 
-
+  var passwordLength = "";
   while (passwordLength < 8 || passwordLength > 128 || passwordLength === "" || passwordLength === null) {
 
     passwordLength = prompt("Your password must be at least 8 - 128 characters in length. Please enter your password length.");
   }
 
-
+  var charSet = "";
   while (charSet === "" || charSet === null) {
 
     var userCharSelect = confirm("Will your password use lowercase letters?")
@@ -61,8 +60,10 @@ var generatePassword = function () {
 
   }
 
+  let random = "";
+
   for (var i = 0; i < passwordLength; i++) {
-    var newLetter = charSet.charAt(Math.floor(Math.random() * passwordLength));
+    var newLetter = charSet.charAt(Math.floor(Math.random() * charSet.length));
     random += newLetter;
   }
   return random;
@@ -80,9 +81,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-
-
 };
 
 // Add event listener to generate button
