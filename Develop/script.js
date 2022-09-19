@@ -19,15 +19,9 @@ const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const num = "1234567890";
 const specChar = "`~!@#$%^&*()_+-=[];',./{}|:?<>|";
 
-
-
-
 // Assignment code here
 
-
-
 var generatePassword = function () {
-
 
   var passwordLength = "";
   while (passwordLength < 8 || passwordLength > 128 || passwordLength === "" || passwordLength === null) {
@@ -36,6 +30,7 @@ var generatePassword = function () {
   }
 
   var charSet = "";
+
   while (charSet === "" || charSet === null) {
 
     var userCharSelect = confirm("Will your password use lowercase letters?")
@@ -57,7 +52,6 @@ var generatePassword = function () {
     if (charSet === "" || charSet === null) {
       alert("At least one option must be selected to generate your password.")
     }
-
   }
 
   let random = "";
@@ -67,10 +61,7 @@ var generatePassword = function () {
     random += newLetter;
   }
   return random;
-
 };
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
