@@ -19,24 +19,22 @@ const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const num = "1234567890";
 const specChar = "`~!@#$%^&*()_+-=[];',./{}|:?<>|";
 var charSet = "";
-var password = "";
-var passwordLength = function () {
-  prompt('Your password must be at least 8 - 128 characters in length. Please enter your password length.');
-  return passwordLength;
-}
+var random = "";
+var passwordLength = "";
+
+
 // Assignment code here
 
 
 
-var generatePassword = function () {›
+var generatePassword = function () {
 
 
-  var length = "";
 
-  while (length < 8 || length > 128 || length === "" || length === null ) {
+  while (passwordLength < 8 || passwordLength > 128 || passwordLength === "" || passwordLength === null ) {
 
-    alert("Your password must be at least 8 - 128 characters in length. Please enter your password length.");
-    length = parseInt(passwordLength());
+    passwordLength = prompt("Your password must be at least 8 - 128 characters in length. Please enter your password length.");
+    return passwordLength;
   }
 
 
@@ -64,10 +62,10 @@ var generatePassword = function () {›
 
   }
 
-  for (var i = 0; i < length; i++) {
-    password = charSet.charAt(Math.floor(Math.random() * length));
+  for (var i = 0; i < passwordLength; i++) {
+    random = charSet.charAt(Math.floor(Math.random() * length));
   }
-  return password;
+  return random;
 
 };
 
@@ -81,7 +79,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.innerText = password;
+  passwordText.value = password;
 
 
 
