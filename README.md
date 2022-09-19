@@ -7,3 +7,10 @@ Criteria include:
 - Numbers
 - Special Characters
 
+Screenshot
+
+![Alt text](./Develop/Screen Shot 2022-09-19 at 11.01.03 AM.png "Optional Title")
+
+Link To Deployed Application
+
+https://mycodesu.github.io/passwordGenerator/
