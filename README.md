@@ -9,7 +9,7 @@ Criteria include:
 
 Screenshot
 
-![Alt text](./Develop/Screen Shot 2022-09-19 at 11.01.03 AM.png "Optional Title")
+<img src="./Develop/Screen Shot 2022-09-19 at 11.01.03 AM.png" alt="Webpage screenshot"/>
 
 Link To Deployed Application
 
